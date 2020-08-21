@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "YouTubeApiAngular"
+    }
+  },
+  "defaultProject": "YouTubeApiAngular",
+  "cli": {
+    "analytics": false
+  }
 }
