@@ -2,7 +2,7 @@
 <hr>
 
 <div class="card-columns">
-    <div class="card" *ngFor="let item of videos">
+    <div class="card animated fadeIn" *ngFor="let item of videos">
         <img [src]="item.thumbnails.high.url" class="card-img-top" alt="...">
         <div class="card-body">
             <h5 class="card-title">{{item.title}}</h5>
@@ -15,7 +15,7 @@
 
 <div class="row mt-5 mb-5 text-center">
     <div class="col">
-        <button class="btn btn-primary btn-lg">
+        <button class="btn btn-primary btn-lg" (click)=cargarVideos()>
             Siguiente página
         </button>
     </div>

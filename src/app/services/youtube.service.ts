@@ -12,7 +12,6 @@ export class YoutubeService {
   private _playListId = 'UUuaPTYj15JSkETGnEseaFFg';
   private _nextPageToken = '';
 
-
   constructor(private _httpClient: HttpClient) {
   }
 
@@ -23,6 +22,7 @@ export class YoutubeService {
       .set('maxResults', '10')
       .set('playlistId', this._playListId)
       .set('key', this._apiKey)
+      .set('pageToken', this._nextPageToken);
 
     // Solo se quieren los videos de la respuesta
     // Usamos pipe por que nos permiten usar operadores de rxjs y asi usar el map() para filtrar la informacion

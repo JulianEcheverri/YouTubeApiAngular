@@ -14,18 +14,19 @@ export class HomeComponent implements OnInit {
   constructor(private _youtubeService: YoutubeService) { }
 
   ngOnInit(): void {
-    // El subscribe es necesario por que se debe de estar pendiente de la respuesta de la peticion y los datos que retorna
+   this.cargarVideos();
+  }
+
+  cargarVideos(){
+ // El subscribe es necesario por que se debe de estar pendiente de la respuesta de la peticion y los datos que retorna
     // usar https://app.quicktype.io/ para los models de la respuesta de la api
     this._youtubeService.getVideos().subscribe(resp => {
       this.videos.push(...resp);
       console.log(this.videos);
     });
-
   }
 
   mostrarVideo(video: Video){
-    console.log(video);
-
     Swal.fire({
       html:`
       <h4>${video.title}</h4>
@@ -43,7 +44,4 @@ export class HomeComponent implements OnInit {
       `,
     })
   }
-
-
-  
 }
